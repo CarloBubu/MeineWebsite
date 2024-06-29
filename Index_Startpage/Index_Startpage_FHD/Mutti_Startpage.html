@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suchmaschine</title>
+</head>
+
+<body class="container">
+    <header>
+        <form action="https://duckduckgo.com/?t=h_&q=" method="get">
+        <input type="search" name="q" placeholder="Suchbegriff eingeben" class="searchfield">
+        <button type="submit" class="searchbtn">Suchen</button>
+        </form>
+    </header>
+
+    <main>
+        <p id="uhr"></p>
+    </main>
+    
+    <a style="background-color: transparent;
+              color: transparent;
+              margin-left: 1087px;
+              font-size: 30px;
+              padding: 30px 10px;
+              text-decoration: none;" 
+        href="https://www.astro.com/horoskop">Klickr</a>
+
+    <footer style="height: 400px;
+                   display: flex;
+                    justify-content: center;">
+        <iframe style="width: 20%; 
+                       border: none; 
+                       height: 180px; 
+                       background-color: white;
+                       margin-top: 100px;
+                       border-radius: 20px;" 
+        src="https://www.wetter.de/widget/3tage/u33db8mm/false/"></iframe>
+    </footer>
+
+    <footer style="height: 100px;
+                   display: flex;
+                   justify-content: center;
+                   align-items: center;">
+        <a href="https://www.netflix.com/browse"><img src="Netflix-Logo.jpg"></a>
+        <a href="https://www.crunchyroll.com/de"><img src="Crunchyroll-Logo.jpg"></a>
+        <a href="https://www.youtube.com/"><img src="Youtube-Logo.jpg"></a>
+        <a href="https://www.web.de/"><img src="Mail-Logo.png"></a>
+    </footer>
+
+</body>
+
+<style>
+    body{
+        background-image: url("Wallpaper.jpg");
+    }
+
+    img{
+        height: 100px;
+        width: 100px;
+        border-radius: 10%;
+        margin: 25px;
+
+    }
+
+    header{
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .searchbtn{
+        height: 25px;
+        margin-top: 100px;
+        border-radius: 10%;
+    }
+
+    .searchfield{
+        padding: 5px;
+        width: 305px;
+        height: 25px;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        margin-top: 100px;
+        border-radius: 5px;
+        
+
+    }
+
+    #uhr {
+	    color: rgb(255, 255, 255);
+        font-size: 3em;
+	    margin: 1em auto;
+        display: flex;
+        justify-content: center;
+        margin-top: 225px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+</style>
+
+<script>
+'use strict';
+(function () {
+	function uhrzeit() {
+		var jetzt = new Date(),
+			h = jetzt.getHours(),
+			m = jetzt.getMinutes(),
+			s = jetzt.getSeconds();
+		m = fuehrendeNull(m);
+		s = fuehrendeNull(s);
+		document.getElementById('uhr')
+			.innerHTML = h + ':' + m + ':' + s;
+		setTimeout(uhrzeit, 500);
+	}
+
+	function fuehrendeNull(zahl) {
+		zahl = (zahl < 10 ? '0' : '') + zahl;
+		return zahl;
+	}
+	document.addEventListener('DOMContentLoaded', uhrzeit);
+}());
+</script>
+
+</html>
