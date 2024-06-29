@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suchmaschine</title>
+</head>
+
+<body class="container">
+    <header>
+        <form action="https://duckduckgo.com/?t=h_&q=" method="get">
+        <input type="search" name="q" placeholder="Suchbegriff eingeben" class="searchfield">
+        <button type="submit" class="searchbtn">Suchen</button>
+        </form>
+    </header>
+   
+    <main>
+        <p id="uhr"></p>
+    </main>
+    <footer>
+        <a href="https://www.netflix.com/browse"><img src="Netflix-Logo.jpg"></a>
+        <a href="https://www.crunchyroll.com/de"><img src="Crunchyroll-Logo.jpg"></a>
+        <a href="https://www.twitch.tv/"><img src="Twitch-Logo.jpg"></a>
+        <a href="https://www.youtube.com/"><img src="Youtube-Logo.jpg"></a>
+        <a href="https://hoyolab.com/"><img src="Hoyolab-Logo.png"></a>
+        <a href="https://www.web.de/"><img src="Mail-Logo.png"></a>
+    </footer>
+
+</body>
+
+<style>
+    .container {
+        animation: background-change 20s linear infinite;
+        background-color: #05060e;
+    }
+  
+  @keyframes background-change {
+    0% {
+      background-color: #3f0101;
+    }
+    50% {
+      background-color: #180076;
+    }
+    100% {
+      background-color: #3f0101;
+    }
+    }
+
+    img{
+        height: 200px;
+        width: 200px;
+        border-radius: 10%;
+        margin: 50px;
+
+    }
+
+    footer{
+        height: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header{
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .searchbtn{
+        height: 50px;
+        margin-top: 200px;
+        border-radius: 10%;
+    }
+
+    .searchfield{
+        padding: 10px;
+        width: 310px;
+        height: 50px;
+        background-color: #05060e;
+        color: azure;
+        margin-top: 200px;
+        border-radius: 10px;
+        
+
+    }
+
+    #uhr {
+	    color: white;
+        font-size: 3em;
+	    margin: 1em auto;
+        display: flex;
+        justify-content: center;
+        margin-top: 450px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+</style>
+
+<script>
+'use strict';
+(function () {
+	function uhrzeit() {
+		var jetzt = new Date(),
+			h = jetzt.getHours(),
+			m = jetzt.getMinutes(),
+			s = jetzt.getSeconds();
+		m = fuehrendeNull(m);
+		s = fuehrendeNull(s);
+		document.getElementById('uhr')
+			.innerHTML = h + ':' + m + ':' + s;
+		setTimeout(uhrzeit, 500);
+	}
+
+	function fuehrendeNull(zahl) {
+		zahl = (zahl < 10 ? '0' : '') + zahl;
+		return zahl;
+	}
+	document.addEventListener('DOMContentLoaded', uhrzeit);
+}());
+</script>
+
+</html>
