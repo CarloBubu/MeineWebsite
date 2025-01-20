@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!!!</title>
+</head>
+<style>
+    @keyframes button {
+        0% {opacity: 1;
+            color: transparent;}
+        100% {color: rgb(255, 0, 0);
+            background-color: rgb(212, 212, 212);}
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    button {
+        color: transparent;
+        border: none;
+        animation-name: button;
+        display: flex;
+        justify-content: center;
+        align-items: normal;
+        animation-duration: 8s;
+        animation-fill-mode: forwards;
+    }
+
+    body {
+        overflow: hidden;
+    }
+
+    @keyframes konfetti {
+        from {margin-top: -100%;}
+        to {margin-top: 100%;
+        color: transparent;
+        }
+    }
+
+    img {
+        display: flex;
+        justify-content: center;
+        margin-top: -100%;
+        animation-name: konfetti;
+        animation-duration: 8s;
+    }
+
+    @keyframes start {
+        from {color: transparent;}
+        to {color: black;}
+    }
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        animation-name: start;
+        color: transparent;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+    }
+
+
+</style>
+
+<body>
+    <footer>
+        <button onclick="playAudio()">Klick mich!</button>
+    </footer>
+    
+    <h1>Alles Gute zum Geburtstag Mutti!!!</h1>
+    <img src="konfetti.png" width="100%">
+
+    <audio id="myAudio">
+        <source src="sound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      
+      <script>
+        function playAudio() {
+          var x = document.getElementById("myAudio");
+          x.play();
+        }
+      </script>
+
+
+</body>
+</html>
